@@ -8,14 +8,22 @@
   "containerDefinitions": [
     {
       "name": "my-next-container",
-      "image": "my-next-docker",
+      "image": "545746263033.dkr.ecr.ap-south-1.amazonaws.com/my-next-docker:latest",
+      "essential": true,
       "portMappings": [
         {
           "containerPort": 3000,
           "protocol": "tcp"
         }
       ],
-      "essential": true
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/my-next-task",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
     }
   ]
 }
