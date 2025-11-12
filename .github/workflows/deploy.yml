@@ -41,6 +41,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ecs-task-def.json
-        service: my-next-service
-        cluster: my-next-cluster
+        service: my-next-task-service-zglf7zu2
+        cluster: my-next-container
         wait-for-service-stability: true
